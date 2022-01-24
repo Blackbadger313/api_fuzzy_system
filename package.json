@@ -1,0 +1,14 @@
+{
+  "name": "fuzzy_ubed",
+  "version": "1.0.0",
+  "description": "tugas_besar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^20.2.1"
+  }
+}
