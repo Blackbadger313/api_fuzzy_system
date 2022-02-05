@@ -716,7 +716,8 @@ Fuzzy_logic_arabica.prototype.defuzzifikasi = function (banyakSample) {
 }
 
 const proseFuzzy = (request, h) => {
-    const { PH, Temperature, Humidity_soil } = request.payload;
+    console.log('masuk');
+    //const { PH, Temperature, Humidity_soil } = request.payload;
 
     /*
     const robusta = new Fuzzy_logic_robusta();
@@ -759,7 +760,7 @@ const proseFuzzy = (request, h) => {
     })
     .code(500);
     */
-   
+
 };
 
 module.exports = {
