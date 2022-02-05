@@ -755,10 +755,9 @@ const proseFuzzy = (request, h) => {
     return h.response({
         status: 'error',
         message: 'Buku gagal ditambahkan',
-      })
-        .code(500);
-    };
-}
+    })
+    .code(500);
+};
 
 module.exports = {
     proseFuzzy,
