@@ -716,7 +716,7 @@ Fuzzy_logic_arabica.prototype.defuzzifikasi = function (banyakSample) {
 }
 
 const proseFuzzy = (request, h) => {
-    const { PH, Temperature, Humidity_air, time, Humidity_soil } = request.payload;
+    const { PH, Temperature, Humidity_soil } = request.payload;
 
     const robusta = new Fuzzy_logic_robusta();
     robusta.derajatAnggotaSuhu(Temperature);
@@ -736,8 +736,8 @@ const proseFuzzy = (request, h) => {
         return h.response({
             status: 'Bisa Arabica',
             data: {
-                persen_robusta: keluarrobusta,
-                persen_arabica: keluararabica,
+                persenRobusta: keluarrobusta,
+                persenArabica: keluararabica,
             },
         })
         .code(200);
@@ -751,6 +751,13 @@ const proseFuzzy = (request, h) => {
         })
         .code(200);
     }
+
+    return h.response({
+        status: 'error',
+        message: 'Buku gagal ditambahkan',
+      })
+        .code(500);
+    };
 }
 
 module.exports = {
