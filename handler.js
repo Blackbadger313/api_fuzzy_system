@@ -718,6 +718,7 @@ Fuzzy_logic_arabica.prototype.defuzzifikasi = function (banyakSample) {
 const proseFuzzy = (request, h) => {
     const { PH, Temperature, Humidity_soil } = request.payload;
 
+    /*
     const robusta = new Fuzzy_logic_robusta();
     robusta.derajatAnggotaSuhu(Temperature);
     robusta.derajatAnggotaKelembaban(Humidity_soil);
@@ -757,6 +758,8 @@ const proseFuzzy = (request, h) => {
         message: 'Buku gagal ditambahkan',
     })
     .code(500);
+    */
+   
 };
 
 module.exports = {
