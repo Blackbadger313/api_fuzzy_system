@@ -735,11 +735,19 @@ const proseFuzzy = (request, h) => {
     if(keluararabica > keluarrobusta){
         return h.response({
             status: 'Bisa Arabica',
+            data: {
+                persen_robusta: keluarrobusta,
+                persen_arabica: keluararabica,
+            },
         })
         .code(200);
     }else if(keluararabica < keluarrobusta){
         return h.response({
             status: 'Bisa Robusta',
+            data: {
+                persen_robusta: keluarrobusta,
+                persen_arabica: keluararabica,
+            },
         })
         .code(200);
     }
