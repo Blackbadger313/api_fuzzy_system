@@ -736,12 +736,11 @@ const proseFuzzy = (request, h) => {
     arabica.derajatAnggotaKeasaman(PH);
     arabica.inferensi();
     let keluararabica = arabica.defuzzifikasi(10);
-    console.log(keluararabica);
-    console.log(keluarrobusta);
 
     if(keluararabica > keluarrobusta){
         return h.response({
-            status: 'Bisa Arabica',
+            status: 'OK',
+            message: 'Bisa Arabica'
             data: {
                 persenRobusta: keluarrobusta,
                 persenArabica: keluararabica,
@@ -750,30 +749,28 @@ const proseFuzzy = (request, h) => {
         .code(200);
     }else if(keluararabica < keluarrobusta){
         return h.response({
-            status: 'Bisa Robusta',
+            status: 'OK',
+            message: 'Bisa Robusta'
             data: {
                 persen_robusta: keluarrobusta,
                 persen_arabica: keluararabica,
             },
         })
         .code(200);
+    }else{
+        return h.response({
+            status: 'OK',
+            message: 'Bisa Robusta & Arabica',
+        })
+        .code(200);
     }
-
-    return h.response({
-        status: 'Bisa Robusta & Arabica',
-    })
-    .code(500);
-};
-
-const masuk = (request, h) => {
     return h.response({
         status: 'error',
-        message: 'Buku gagal ditambahkan',
+        message: 'Tidak Dapat Mendeteksi',
     })
     .code(500);
 };
 
 module.exports = {
     proseFuzzy,
-    masuk,
 }

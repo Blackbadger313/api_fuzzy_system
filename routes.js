@@ -1,6 +1,5 @@
 const {
     proseFuzzy,
-    masuk,
 } = require('./handler');
 
 const routes = [
@@ -9,11 +8,6 @@ const routes = [
         path: '/fuzzy',
         handler: proseFuzzy,
     },
-    {
-        method: 'GET',
-        path: '/masuk',
-        handler: masuk,
-    }
 ];
 
 module.exports = routes;
