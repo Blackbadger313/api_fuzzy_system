@@ -281,7 +281,7 @@ Fuzzy_logic_robusta.prototype.inferensi = function () {
                             }
                         }
                     }
-                    console.log(`IF Kelembaban = ${derajatKelembaban[i]} dan Suhu = ${derajatSuhu[j]} dan Keasaman = ${derajatKeasaman[k]} dan Kesuburan = ${this.kondisiHasilRule[tempCount]} \( ${this.nilaiHasilRule[tempCount]}\)`)
+                    //console.log(`IF Kelembaban = ${derajatKelembaban[i]} dan Suhu = ${derajatSuhu[j]} dan Keasaman = ${derajatKeasaman[k]} dan Kesuburan = ${this.kondisiHasilRule[tempCount]} \( ${this.nilaiHasilRule[tempCount]}\)`)
                     tempCount ++;
                 }
                 rulesCount++;
@@ -636,7 +636,7 @@ Fuzzy_logic_arabica.prototype.inferensi = function () {
                             }
                         }
                     }
-                    console.log(`IF Kelembaban = ${derajatKelembaban[i]} dan Suhu = ${derajatSuhu[j]} dan Keasaman = ${derajatKeasaman[k]} dan Kesuburan = ${this.kondisiHasilRule[tempCount]} \( ${this.nilaiHasilRule[tempCount]}\)`)
+                    //console.log(`IF Kelembaban = ${derajatKelembaban[i]} dan Suhu = ${derajatSuhu[j]} dan Keasaman = ${derajatKeasaman[k]} dan Kesuburan = ${this.kondisiHasilRule[tempCount]} \( ${this.nilaiHasilRule[tempCount]}\)`)
                     tempCount ++;
                 }
                 rulesCount++;
@@ -740,7 +740,7 @@ const proseFuzzy = (request, h) => {
     if(keluararabica > keluarrobusta){
         return h.response({
             status: 'OK',
-            message: 'Bisa Arabica'
+            message: 'Bisa Arabica',
             data: {
                 persenRobusta: keluarrobusta,
                 persenArabica: keluararabica,
@@ -750,7 +750,7 @@ const proseFuzzy = (request, h) => {
     }else if(keluararabica < keluarrobusta){
         return h.response({
             status: 'OK',
-            message: 'Bisa Robusta'
+            message: 'Bisa Robusta',
             data: {
                 persen_robusta: keluarrobusta,
                 persen_arabica: keluararabica,
