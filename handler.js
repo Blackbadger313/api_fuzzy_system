@@ -720,6 +720,7 @@ const proseFuzzy = (request, h) => {
         PH,
         Temperature,
         Humidity_soil,
+        time,
     } = request.payload;
 
 
@@ -744,6 +745,7 @@ const proseFuzzy = (request, h) => {
             data: {
                 persenRobusta: keluarrobusta,
                 persenArabica: keluararabica,
+                timestamp: time,
             },
         })
         .code(200);
@@ -754,6 +756,7 @@ const proseFuzzy = (request, h) => {
             data: {
                 persen_robusta: keluarrobusta,
                 persen_arabica: keluararabica,
+                timestamp: time,
             },
         })
         .code(200);
@@ -761,6 +764,7 @@ const proseFuzzy = (request, h) => {
         return h.response({
             status: 'OK',
             message: 'Bisa Robusta & Arabica',
+            timestamp: time,
         })
         .code(200);
     }
