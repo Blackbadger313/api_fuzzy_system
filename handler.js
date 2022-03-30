@@ -196,7 +196,7 @@ Fuzzy_logic_robusta.prototype.inferensi = function () {
                                 this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
                             }else if(k == 1){
                                 //termaKeasamanNetral
-                                this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
+                                this.kondisiHasilRule[tempCount] = "COCOK";
                             }else if(k == 2){
                                 //termaKeasamanBasa
                                 this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
@@ -250,7 +250,7 @@ Fuzzy_logic_robusta.prototype.inferensi = function () {
                                 this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
                             }else if(k == 1){
                                 //termaKeasamanNetral
-                                this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
+                                this.kondisiHasilRule[tempCount] = "COCOK";
                             }else if(k == 2){
                                 //termaKeasamanBasa
                                 this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
@@ -259,13 +259,13 @@ Fuzzy_logic_robusta.prototype.inferensi = function () {
                             //termaSuhuNormal
                             if(k == 0){
                                 //termaKeasamanAsam
-                                this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
+                                this.kondisiHasilRule[tempCount] = "COCOK";
                             }else if(k == 1){
                                 //termaKeasamanNetral
                                 this.kondisiHasilRule[tempCount] = "COCOK";
                             }else if(k == 2){
                                 //termaKeasamanBasa
-                                this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
+                                this.kondisiHasilRule[tempCount] = "COCOK";
                             }
                         }else if(j == 2){
                             //termaSuhuPanas
@@ -274,7 +274,7 @@ Fuzzy_logic_robusta.prototype.inferensi = function () {
                                 this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
                             }else if(k == 1){
                                 //termaKeasamanNetral
-                                this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
+                                this.kondisiHasilRule[tempCount] = "COCOK";
                             }else if(k == 2){
                                 //termaKeasamanBasa
                                 this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
@@ -526,22 +526,22 @@ Fuzzy_logic_arabica.prototype.inferensi = function () {
                                 this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
                             }else if(k == 1){
                                 //termaKeasamanNetral
-                                this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
+                                this.kondisiHasilRule[tempCount] = "COCOK";
                             }else if(k == 2){
                                 //termaKeasamanBasa
-                                this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
+                                this.kondisiHasilRule[tempCount] = "COCOK";
                             }
                         }else if(j == 1){
                             //termaSuhuNormal
                             if(k == 0){
                                 //termaKeasamanAsam
-                                this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
+                                this.kondisiHasilRule[tempCount] = "COCOK";
                             }else if(k == 1){
                                 //termaKeasamanNetral
                                 this.kondisiHasilRule[tempCount] = "COCOK";
                             }else if(k == 2){
                                 //termaKeasamanBasa
-                                this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
+                                this.kondisiHasilRule[tempCount] = "COCOK";
                             }
 
                         }else if(j == 2){
@@ -569,7 +569,7 @@ Fuzzy_logic_arabica.prototype.inferensi = function () {
                                 this.kondisiHasilRule[tempCount] = "COCOK";
                             }else if(k == 2){
                                 //termaKeasamanBasa
-                                this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
+                                this.kondisiHasilRule[tempCount] = "COCOK";
                             }
                         }else if(j == 1){
                             //termaSuhuNormal
@@ -605,7 +605,7 @@ Fuzzy_logic_arabica.prototype.inferensi = function () {
                                 this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
                             }else if(k == 1){
                                 //termaKeasamanNetral
-                                this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
+                                this.kondisiHasilRule[tempCount] = "COCOK";
                             }else if(k == 2){
                                 //termaKeasamanBasa
                                 this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
@@ -620,7 +620,7 @@ Fuzzy_logic_arabica.prototype.inferensi = function () {
                                 this.kondisiHasilRule[tempCount] = "COCOK";
                             }else if(k == 2){
                                 //termaKeasamanBasa
-                                this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
+                                this.kondisiHasilRule[tempCount] = "COCOK";
                             }
                         }else if(j == 2){
                             //termaSuhuPanas
@@ -629,7 +629,7 @@ Fuzzy_logic_arabica.prototype.inferensi = function () {
                                 this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
                             }else if(k == 1){
                                 //termaKeasamanNetral
-                                this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
+                                this.kondisiHasilRule[tempCount] = "COCOK";
                             }else if(k == 2){
                                 //termaKeasamanBasa
                                 this.kondisiHasilRule[tempCount] = "TIDAK COCOK";
