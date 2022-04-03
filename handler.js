@@ -738,9 +738,6 @@ const proseFuzzy = (request, h) => {
     arabica.inferensi();
     let keluararabica = arabica.defuzzifikasi(10);
 
-    console.log(keluararabica);
-    console.log(keluarrobusta);
-
     if(keluararabica > keluarrobusta){
         return h.response({
             status: 'OK',
