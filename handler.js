@@ -738,6 +738,9 @@ const proseFuzzy = (request, h) => {
     arabica.inferensi();
     let keluararabica = arabica.defuzzifikasi(10);
 
+    console.log(keluararabica);
+    console.log(keluarrobusta);
+
     if(keluararabica > keluarrobusta){
         return h.response({
             status: 'OK',
@@ -764,7 +767,9 @@ const proseFuzzy = (request, h) => {
         return h.response({
             status: 'OK',
             message: 'Bisa Robusta & Arabica',
-            timestamp: time,
+            data: {
+                timestamp: time,
+            }
         })
         .code(200);
     }
