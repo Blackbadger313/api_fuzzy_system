@@ -1,3 +1,4 @@
+const axios = require('axios');
 const {
     segitigaKanan,
     segitigaKiri,
@@ -716,6 +717,9 @@ Fuzzy_logic_arabica.prototype.defuzzifikasi = function (banyakSample) {
 }
 
 const proseFuzzy = (request, h) => {
+    const url = 'https://thingsboard.cloud/api/v1/TqBUfcAyJgMYjYdnIGu7/telemetry';
+    var data = {};
+
     const {
         PH,
         Temperature,
@@ -739,6 +743,22 @@ const proseFuzzy = (request, h) => {
     let keluararabica = arabica.defuzzifikasi(10);
 
     if(keluararabica > keluarrobusta){
+        var data = {
+            timestamp: time,
+            robusta: keluarrobusta,
+            arabica: keluararabica,
+            result: 'Bisa Arabica'
+        }
+
+        axios
+            .post(url, data)
+            .then(res => {
+                console.log(`statusCode: ${res.status}`)
+            })
+            .catch(error => {
+                console.log(error);
+            });
+
         return h.response({
             status: 'OK',
             message: 'Bisa Arabica',
@@ -750,6 +770,23 @@ const proseFuzzy = (request, h) => {
         })
         .code(200);
     }else if(keluararabica < keluarrobusta){
+        var data = {
+            timestamp: time,
+            robusta: keluarrobusta,
+            arabica: keluararabica,
+            result: 'Bisa Robusta'
+        }
+        axios
+            .post(url, data)
+            .then(res => {
+                console.log(`statusCode: ${res.status}`)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        $.post(url, data, function(data, status){
+            console.log(`${data} and status is ${status}`)
+        });
         return h.response({
             status: 'OK',
             message: 'Bisa Robusta',
@@ -761,6 +798,23 @@ const proseFuzzy = (request, h) => {
         })
         .code(200);
     }else{
+        var data = {
+            timestamp: time,
+            robusta: keluarrobusta,
+            arabica: keluararabica,
+            result: 'Bisa Keduanya'
+        }
+        axios
+            .post(url, data)
+            .then(res => {
+                console.log(`statusCode: ${res.status}`)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        $.post(url, data, function(data, status){
+            console.log(`${data} and status is ${status}`)
+        });
         return h.response({
             status: 'OK',
             message: 'Bisa Robusta & Arabica',
