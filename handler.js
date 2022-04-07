@@ -757,7 +757,7 @@ const proseFuzzy = (request, h) => {
             })
             .catch(error => {
                 console.log(error);
-            });
+            })
 
         return h.response({
             status: 'OK',
@@ -784,9 +784,6 @@ const proseFuzzy = (request, h) => {
             .catch(error => {
                 console.log(error);
             })
-        $.post(url, data, function(data, status){
-            console.log(`${data} and status is ${status}`)
-        });
         return h.response({
             status: 'OK',
             message: 'Bisa Robusta',
@@ -812,9 +809,6 @@ const proseFuzzy = (request, h) => {
             .catch(error => {
                 console.log(error);
             })
-        $.post(url, data, function(data, status){
-            console.log(`${data} and status is ${status}`)
-        });
         return h.response({
             status: 'OK',
             message: 'Bisa Robusta & Arabica',
