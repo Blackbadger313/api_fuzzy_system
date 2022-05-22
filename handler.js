@@ -92,19 +92,19 @@ Fuzzy_logic_robusta.prototype.derajatAnggotaKelembaban = function (inputKelembab
 };
 
 Fuzzy_logic_robusta.prototype.derajatAnggotaKeasaman = function (inputKeasaman) {
-    if(inputKeasaman <= 4.5){
+    if(inputKeasaman <= 4.3){
         //Asam
         this.termaKeasamanAsam = 1;
 
-    }else if(inputKeasaman >= 5.5 & inputKeasaman <= 6.5){
+    }else if(inputKeasaman >= 5.3 & inputKeasaman <= 6.0){
         //Netral
         this.termaKeasamanNetral = 1;
 
-    }else if(inputKeasaman >= 7.5){
+    }else if(inputKeasaman >= 7.0){
         //Basa
         this.termaKeasamanBasa = 1;
 
-    }else if(inputKeasaman > 6.5 && inputKeasaman < 7.5){
+    }else if(inputKeasaman > 6.0 && inputKeasaman < 7.0){
         //this.termaNetral
         this.termaKeasamanNetral = trapesiumKanan(7.5, 6.5, inputKeasaman);
         this.termaKeasamanNetral = this.termaKeasamanNetral.toFixed(2);
@@ -113,7 +113,7 @@ Fuzzy_logic_robusta.prototype.derajatAnggotaKeasaman = function (inputKeasaman) 
         this.termaKeasamanBasa = trapesiumKiri(6.5, 7.5, inputKeasaman);
         this.termaKeasamanBasa = this.termaKeasamanBasa.toFixed(2);
 
-    }else if(inputKeasaman > 4.5 && inputKeasaman < 5.5){
+    }else if(inputKeasaman > 4.3 && inputKeasaman < 5.3){
         //this.termaAsam
         this.termaKeasamanAsam = trapesiumKanan(5.5, 4.5, inputKeasaman);
         this.termaKeasamanAsam = this.termaKeasamanAsam.toFixed(2);
@@ -447,19 +447,19 @@ Fuzzy_logic_arabica.prototype.derajatAnggotaKelembaban = function (inputKelembab
 };
 
 Fuzzy_logic_arabica.prototype.derajatAnggotaKeasaman = function (inputKeasaman) {
-    if(inputKeasaman <= 4.5){
+    if(inputKeasaman <= 4.6){
         //Asam
         this.termaKeasamanAsam = 1;
 
-    }else if(inputKeasaman >= 5.5 & inputKeasaman <= 6.5){
+    }else if(inputKeasaman >= 5.6 & inputKeasaman <= 6.6){
         //Netral
         this.termaKeasamanNetral = 1;
 
-    }else if(inputKeasaman >= 7.5){
+    }else if(inputKeasaman >= 7.6){
         //Basa
         this.termaKeasamanBasa = 1;
 
-    }else if(inputKeasaman > 6.5 && inputKeasaman < 7.5){
+    }else if(inputKeasaman > 6.6 && inputKeasaman < 7.6){
         //this.termaNetral
         this.termaKeasamanNetral = trapesiumKanan(7.5, 6.5, inputKeasaman);
         this.termaKeasamanNetral = this.termaKeasamanNetral.toFixed(2);
@@ -468,7 +468,7 @@ Fuzzy_logic_arabica.prototype.derajatAnggotaKeasaman = function (inputKeasaman) 
         this.termaKeasamanBasa = trapesiumKiri(6.5, 7.5, inputKeasaman);
         this.termaKeasamanBasa = this.termaKeasamanBasa.toFixed(2);
 
-    }else if(inputKeasaman > 4.5 && inputKeasaman < 5.5){
+    }else if(inputKeasaman > 4.6 && inputKeasaman < 5.6){
         //this.termaAsam
         this.termaKeasamanAsam = trapesiumKanan(5.5, 4.5, inputKeasaman);
         this.termaKeasamanAsam = this.termaKeasamanAsam.toFixed(2);
