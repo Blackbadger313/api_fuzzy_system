@@ -26,7 +26,7 @@ function Fuzzy_logic_robusta() {
 };
 
 Fuzzy_logic_robusta.prototype.derajatAnggotaSuhu = function (inputSuhu) {
-    if(inputSuhu <= 12){
+    if(inputSuhu <= 19){
         //Dingin
         this.termaSuhuDingin = 1;
 
@@ -34,26 +34,26 @@ Fuzzy_logic_robusta.prototype.derajatAnggotaSuhu = function (inputSuhu) {
         //Normal
         this.termaSuhuNormal = 1;
 
-    }else if(inputSuhu >= 35){
+    }else if(inputSuhu >= 32){
         //Panas
         this.termaSuhuPanas = 1;
 
-    }else if(inputSuhu > 25 && inputSuhu < 35){
+    }else if(inputSuhu > 25 && inputSuhu < 32){
         //this.termaPanas
-        this.termaSuhuPanas = trapesiumKiri(25, 35, inputSuhu);
+        this.termaSuhuPanas = trapesiumKiri(25, 32, inputSuhu);
         this.termaSuhuPanas = this.termaSuhuPanas.toFixed(2);
 
         //this.termaNormal
-        this.termaSuhuNormal = trapesiumKanan(35, 25, inputSuhu);
+        this.termaSuhuNormal = trapesiumKanan(32, 25, inputSuhu);
         this.termaSuhuNormal = this.termaSuhuNormal.toFixed(2);
 
-    }else if(inputSuhu > 12 && inputSuhu < 22){
+    }else if(inputSuhu > 19 && inputSuhu < 22){
         //this.termaDingin
-        this.termaSuhuDingin = trapesiumKanan(22, 12, inputSuhu);
+        this.termaSuhuDingin = trapesiumKanan(22, 19, inputSuhu);
         this.termaSuhuDingin = this.termaSuhuDingin.toFixed(2);;
         
         //this.termaNormal
-        this.termaSuhuNormal = trapesiumKiri(12, 22, inputSuhu);
+        this.termaSuhuNormal = trapesiumKiri(19, 22, inputSuhu);
         this.termaSuhuNormal = this.termaSuhuNormal.toFixed(2);;
     }
 };
@@ -67,17 +67,17 @@ Fuzzy_logic_robusta.prototype.derajatAnggotaKelembaban = function (inputKelembab
         //Lembab
         this.termaKelembabanLembab = 1;
 
-    }else if(inputKelembaban >= 80){
+    }else if(inputKelembaban >= 90){
         //Basah
         this.termaKelembabanBasah = 1;
 
-    }else if(inputKelembaban > 70 && inputKelembaban < 80){
+    }else if(inputKelembaban > 70 && inputKelembaban < 90){
         //this.termaLembab
-        this.termaKelembabanLembab = trapesiumKanan(80, 70, inputKelembaban);
+        this.termaKelembabanLembab = trapesiumKanan(90, 70, inputKelembaban);
         this.termaKelembabanLembab = this.termaKelembabanLembab.toFixed(2);
 
         //this.termaBasah
-        this.termaKelembabanBasah = trapesiumKiri(70, 80, inputKelembaban);
+        this.termaKelembabanBasah = trapesiumKiri(70, 90, inputKelembaban);
         this.termaKelembabanBasah = this.termaKelembabanBasah.toFixed(2);
 
     }else if(inputKelembaban > 30 && inputKelembaban < 40){
@@ -92,7 +92,7 @@ Fuzzy_logic_robusta.prototype.derajatAnggotaKelembaban = function (inputKelembab
 };
 
 Fuzzy_logic_robusta.prototype.derajatAnggotaKeasaman = function (inputKeasaman) {
-    if(inputKeasaman <= 4.3){
+    if(inputKeasaman <= 5){
         //Asam
         this.termaKeasamanAsam = 1;
 
@@ -100,26 +100,26 @@ Fuzzy_logic_robusta.prototype.derajatAnggotaKeasaman = function (inputKeasaman) 
         //Netral
         this.termaKeasamanNetral = 1;
 
-    }else if(inputKeasaman >= 7.0){
+    }else if(inputKeasaman >= 6.5){
         //Basa
         this.termaKeasamanBasa = 1;
 
-    }else if(inputKeasaman > 6.0 && inputKeasaman < 7.0){
+    }else if(inputKeasaman > 6 && inputKeasaman < 6.5){
         //this.termaNetral
-        this.termaKeasamanNetral = trapesiumKanan(7.5, 6.5, inputKeasaman);
+        this.termaKeasamanNetral = trapesiumKanan(6.5, 6, inputKeasaman);
         this.termaKeasamanNetral = this.termaKeasamanNetral.toFixed(2);
 
         //this.termaBasa
-        this.termaKeasamanBasa = trapesiumKiri(6.5, 7.5, inputKeasaman);
+        this.termaKeasamanBasa = trapesiumKiri(6, 6.5, inputKeasaman);
         this.termaKeasamanBasa = this.termaKeasamanBasa.toFixed(2);
 
-    }else if(inputKeasaman > 4.3 && inputKeasaman < 5.3){
+    }else if(inputKeasaman > 5 && inputKeasaman < 5.3){
         //this.termaAsam
-        this.termaKeasamanAsam = trapesiumKanan(5.5, 4.5, inputKeasaman);
+        this.termaKeasamanAsam = trapesiumKanan(5.3, 5, inputKeasaman);
         this.termaKeasamanAsam = this.termaKeasamanAsam.toFixed(2);
 
         //this.termaNetral
-        this.termaKeasamanNetral = trapesiumKiri(4.5, 5.5, inputKeasaman);
+        this.termaKeasamanNetral = trapesiumKiri(5, 5.3, inputKeasaman);
         this.termaKeasamanNetral = this.termaKeasamanNetral.toFixed(2);
     }
 };
@@ -381,7 +381,7 @@ function Fuzzy_logic_arabica() {
 };
 
 Fuzzy_logic_arabica.prototype.derajatAnggotaSuhu = function (inputSuhu) {
-    if(inputSuhu <= 6){
+    if(inputSuhu <= 14){
         //Dingin
         this.termaSuhuDingin = 1;
 
@@ -389,32 +389,32 @@ Fuzzy_logic_arabica.prototype.derajatAnggotaSuhu = function (inputSuhu) {
         //Normal
         this.termaSuhuNormal = 1;
 
-    }else if(inputSuhu >= 32){
+    }else if(inputSuhu >= 26){
         //Panas
         this.termaSuhuPanas = 1;
 
-    }else if(inputSuhu > 22 && inputSuhu < 32){
+    }else if(inputSuhu > 22 && inputSuhu < 26){
         //this.termaPanas
-        this.termaSuhuPanas = trapesiumKiri(25, 35, inputSuhu);
+        this.termaSuhuPanas = trapesiumKiri(22, 26, inputSuhu);
         this.termaSuhuPanas = this.termaSuhuPanas.toFixed(2);
 
         //this.termaNormal
-        this.termaSuhuNormal = trapesiumKanan(35, 25, inputSuhu);
+        this.termaSuhuNormal = trapesiumKanan(26, 22, inputSuhu);
         this.termaSuhuNormal = this.termaSuhuNormal.toFixed(2);
 
-    }else if(inputSuhu > 6 && inputSuhu < 16){
+    }else if(inputSuhu > 14 && inputSuhu < 16){
         //this.termaDingin
-        this.termaSuhuDingin = trapesiumKanan(22, 12, inputSuhu);
+        this.termaSuhuDingin = trapesiumKanan(16, 14, inputSuhu);
         this.termaSuhuDingin = this.termaSuhuDingin.toFixed(2);;
         
         //this.termaNormal
-        this.termaSuhuNormal = trapesiumKiri(12, 22, inputSuhu);
+        this.termaSuhuNormal = trapesiumKiri(14, 16, inputSuhu);
         this.termaSuhuNormal = this.termaSuhuNormal.toFixed(2);;
     }
 };
 
 Fuzzy_logic_arabica.prototype.derajatAnggotaKelembaban = function (inputKelembaban) {
-    if(inputKelembaban <=30){
+    if(inputKelembaban <=20){
         //Kering
         this.termaKelembabanKering = 1;
 
@@ -435,19 +435,19 @@ Fuzzy_logic_arabica.prototype.derajatAnggotaKelembaban = function (inputKelembab
         this.termaKelembabanBasah = trapesiumKiri(70, 80, inputKelembaban);
         this.termaKelembabanBasah = this.termaKelembabanBasah.toFixed(2);
 
-    }else if(inputKelembaban > 30 && inputKelembaban < 40){
+    }else if(inputKelembaban > 20 && inputKelembaban < 40){
         //this.termaKering
-        this.termaKelembabanKering = trapesiumKanan(40, 30, inputKelembaban);
+        this.termaKelembabanKering = trapesiumKanan(40, 20, inputKelembaban);
         this.termaKelembabanKering = this.termaKelembabanKering.toFixed(2);
 
         //this.termaLembab
-        this.termaKelembabanLembab = trapesiumKiri(30, 40, inputKelembaban);
+        this.termaKelembabanLembab = trapesiumKiri(20, 40, inputKelembaban);
         this.termaKelembabanLembab = this.termaKelembabanLembab.toFixed(2);
     }
 };
 
 Fuzzy_logic_arabica.prototype.derajatAnggotaKeasaman = function (inputKeasaman) {
-    if(inputKeasaman <= 4.6){
+    if(inputKeasaman <= 5.5){
         //Asam
         this.termaKeasamanAsam = 1;
 
@@ -455,26 +455,26 @@ Fuzzy_logic_arabica.prototype.derajatAnggotaKeasaman = function (inputKeasaman) 
         //Netral
         this.termaKeasamanNetral = 1;
 
-    }else if(inputKeasaman >= 7.6){
+    }else if(inputKeasaman >= 7.4){
         //Basa
         this.termaKeasamanBasa = 1;
 
-    }else if(inputKeasaman > 6.6 && inputKeasaman < 7.6){
+    }else if(inputKeasaman > 6.6 && inputKeasaman < 7.4){
         //this.termaNetral
-        this.termaKeasamanNetral = trapesiumKanan(7.5, 6.5, inputKeasaman);
+        this.termaKeasamanNetral = trapesiumKanan(7.4, 6.6, inputKeasaman);
         this.termaKeasamanNetral = this.termaKeasamanNetral.toFixed(2);
 
         //this.termaBasa
-        this.termaKeasamanBasa = trapesiumKiri(6.5, 7.5, inputKeasaman);
+        this.termaKeasamanBasa = trapesiumKiri(6.6, 7.4, inputKeasaman);
         this.termaKeasamanBasa = this.termaKeasamanBasa.toFixed(2);
 
-    }else if(inputKeasaman > 4.6 && inputKeasaman < 5.6){
+    }else if(inputKeasaman > 5.5 && inputKeasaman < 5.6){
         //this.termaAsam
-        this.termaKeasamanAsam = trapesiumKanan(5.5, 4.5, inputKeasaman);
+        this.termaKeasamanAsam = trapesiumKanan(5.6, 5.5, inputKeasaman);
         this.termaKeasamanAsam = this.termaKeasamanAsam.toFixed(2);
 
         //this.termaNetral
-        this.termaKeasamanNetral = trapesiumKiri(4.5, 5.5, inputKeasaman);
+        this.termaKeasamanNetral = trapesiumKiri(5.5, 5.6, inputKeasaman);
         this.termaKeasamanNetral = this.termaKeasamanNetral.toFixed(2);
     }
 };
@@ -717,7 +717,7 @@ Fuzzy_logic_arabica.prototype.defuzzifikasi = function (banyakSample) {
 }
 
 const proseFuzzy = (request, h) => {
-    const url = 'https://thingsboard.cloud/api/v1/TqBUfcAyJgMYjYdnIGu7/telemetry';
+    const url = 'https://thingsboard.cloud/api/v1/F1E5sC8E4e7tdAjUD47P/telemetry';
     var data = {};
 
     const {
