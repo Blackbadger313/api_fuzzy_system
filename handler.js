@@ -741,9 +741,47 @@ const proseFuzzy = (request, h) => {
     arabica.derajatAnggotaKeasaman(PH);
     arabica.inferensi();
     let keluararabica = arabica.defuzzifikasi(10);
+    
+    if(keluararabica <= 79 && keluarrobusta <= 79){
+	var data = {
+            keasaman: PH,
+            suhu: Temperature,
+            kelembapan: Humidity_soil,
+            timestamp: time,
+            robusta: keluarrobusta,
+            arabica: keluararabica,
+            result: 'Nilai fuzzy tidak memenuhi syarat'
+        }
+
+	axios
+            .post(url, data)
+            .then(res => {
+                console.log(`statusCode: ${res.status}`)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+	return h.response({
+            status: 'OK',
+            message: 'Nilai fuzzy tidak memenuhi syarat',
+            data: {
+                keasaman: PH,
+                suhu: Temperature,
+                kelembapan: Humidity_soil,
+                persenRobusta: keluarrobusta,
+                persenArabica: keluararabica,
+                timestamp: time,
+            },
+        })
+        .code(200);
+     }
 
     if(keluararabica > keluarrobusta){
         var data = {
+	    keasaman: PH,
+            suhu: Temperature,
+	    kelembapan: Humidity_soil,
             timestamp: time,
             robusta: keluarrobusta,
             arabica: keluararabica,
@@ -763,6 +801,9 @@ const proseFuzzy = (request, h) => {
             status: 'OK',
             message: 'Bisa Arabica',
             data: {
+		keasaman: PH,
+        	suhu: Temperature,
+        	kelembapan: Humidity_soil,
                 persenRobusta: keluarrobusta,
                 persenArabica: keluararabica,
                 timestamp: time,
@@ -771,6 +812,9 @@ const proseFuzzy = (request, h) => {
         .code(200);
     }else if(keluararabica < keluarrobusta){
         var data = {
+            keasaman: PH,
+            suhu: Temperature,
+            kelembapan: Humidity_soil,
             timestamp: time,
             robusta: keluarrobusta,
             arabica: keluararabica,
@@ -788,6 +832,9 @@ const proseFuzzy = (request, h) => {
             status: 'OK',
             message: 'Bisa Robusta',
             data: {
+		keasaman: PH,
+                suhu: Temperature,
+                kelembapan: Humidity_soil,
                 persen_robusta: keluarrobusta,
                 persen_arabica: keluararabica,
                 timestamp: time,
@@ -796,6 +843,9 @@ const proseFuzzy = (request, h) => {
         .code(200);
     }else{
         var data = {
+	    keasaman: PH,
+            suhu: Temperature,
+            kelembapan: Humidity_soil,
             timestamp: time,
             robusta: keluarrobusta,
             arabica: keluararabica,
@@ -813,6 +863,11 @@ const proseFuzzy = (request, h) => {
             status: 'OK',
             message: 'Bisa Robusta & Arabica',
             data: {
+            	robusta: keluarrobusta,
+            	arabica: keluararabica,
+		keasaman: PH,
+                suhu: Temperature,
+                kelembapan: Humidity_soil,
                 timestamp: time,
             }
         })
